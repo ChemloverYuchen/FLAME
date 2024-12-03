@@ -5,7 +5,7 @@ This is a repository of the article "[FLAME: An artificial intelligence module f
 
 ## Overview
 
-![GUE](figures/FLAME.png)
+![GUE](figure/FLAME.png)
 
 
 ## System Requirements
