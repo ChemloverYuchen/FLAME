@@ -1,0 +1,69 @@
+# REINVENT4 TOML input example for reinforcement/curriculum learning
+#
+#
+# Curriculum learning in REINVENT4 is a multi-stage reinforcement learning
+# run.  One or more stages (auto CL) can be defined.  But it is also
+# possible to continue a run from any checkpoint file that is generated
+# during the run (manual CL).  Currently checkpoints are written at the end
+# of a run also when the run is forcefully terminated with Ctrl-C.
+
+run_type = "staged_learning"
+use_cuda = false
+#tb_logdir = "tb_logs_flame" ##
+#json_out_config = "flame.json" ##
+
+[parameters]
+
+
+#summary_csv_prefix = "flame_result"##
+use_checkpoint = false
+purge_memories = false
+
+## Reinvent
+prior_file = "priors/reinvent.prior"
+agent_file = "priors/reinvent.prior"
+
+batch_size = 64   # molecules per step    
+
+unique_sequences = true
+randomize_smiles = true
+
+
+[learning_strategy]
+
+type = "dap"     
+sigma = 128    
+rate = 0.0001 
+
+
+[diversity_filter]  
+
+type = "IdenticalMurckoScaffold" 
+                               
+bucket_size = 25            
+minscore = 0.4                
+minsimilarity = 0.4            
+penalty_multiplier = 0.5        
+
+
+### Stage 1
+### Note that stages must always be a list i.e. double brackets
+[[stage]]
+
+chkpt_file = 'flame.chkpt'##
+
+termination = "simple" 
+max_score = 100 ##
+min_steps = 1 ##100
+max_steps = 100 ##1000
+
+[stage.scoring]
+type = "geometric_mean"  # aggregation function #arithmetic_mean
+
+[[stage.scoring.component]]
+[stage.scoring.component.flame_abs]
+# or flame_emi/flame_plqy/flame_e/stokes
+
+[[stage.scoring.component.flame_abs.endpoint]]
+name = "flame"  # user chosen name for output
+weight = 10  # weight to fine-tune the relevance of this component
