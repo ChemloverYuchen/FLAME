@@ -52,7 +52,7 @@ conda activate flame
 cd /dir/to/this/repo # !cd the dir you git clone or download this repository
 pip install -r requirements.txt
 ```
-and then you could use FluoDB by python shell or jupyter.
+and then you could use FLAME by python shell or jupyter.
 
 
 ## FLAME Usage
