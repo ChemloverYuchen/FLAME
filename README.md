@@ -31,7 +31,6 @@ tensorboardX==2.6.2.2
 eniops==0.7.0
 h5py==3.10.0
 padelpy==0.1.14
-tensorflow==2.13.1
 gdown==5.2.0
 tables==3.8.0
 pandas_flavor
