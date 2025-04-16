@@ -1,6 +1,6 @@
 # FLAME: FLuorophore design Acceleration ModulE
 
-This is a repository of the article "[FLAME: An artificial intelligence module facilitating fluorophore design](#)".
+This is a repository of the article "[A modular artificial intelligence framework to facilitate fluorophore design](https://www.nature.com/articles/s41467-025-58881-5)".
 
 
 ## Overview
