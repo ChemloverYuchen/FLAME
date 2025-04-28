@@ -28,7 +28,7 @@ typed-argument-parser==1.9.0
 rdkit==2023.9.5
 ase==3.22.1
 tensorboardX==2.6.2.2
-eniops==0.7.0
+einops==0.7.0
 h5py==3.10.0
 padelpy==0.1.14
 gdown==5.2.0
