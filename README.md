@@ -85,11 +85,18 @@ from FLAME import flsf_predict
 result = flsf_predict(model_path, smiles=SMILES)
 ```
 
+## Checkpoints
+
+The checkpoint files for **FLSF** are available on Zenodo:
+
+https://zenodo.org/records/15795149.
+
+
 ## Reinvent FLAME_plugin
 
-We provided a FLAME_plugin for Reinvent to molecule design and molecuar optimization.
+We provided a FLAME_plugin for Reinvent (Version 4.1.8) to molecule design and molecuar optimization.
 
-Fisrt download the FLAME_plugin.zip and unzip the file to /path/to/python/lib/site-packages/reinvent_plugins
+Fisrt download the FLAME_plugin.zip and unzip the file to /path/to/python/lib/site-packages/reinvent_plugins/components
 
 You can Create reinvent toml config file with scoring stage like:
 ```
